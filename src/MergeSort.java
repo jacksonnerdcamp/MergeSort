@@ -1,5 +1,5 @@
 public class MergeSort {
-    public void mergeSortHelper(int[] arr, int left, int right, int[] temp)
+    public static void mergeSortHelper(int[] arr, int left, int right, int[] temp)
     {
         if(left < right)
         {
@@ -10,14 +10,8 @@ public class MergeSort {
         }
     }
 
-    public void mergeSort(int[] arr)
-    {
-        int n =arr.length;
-        int[] temp = new int [n];
-        mergeSortHelper(arr, 0,n-1, temp);
-    }
 
-    public void merge(int[] arr, int left, int mid, int right, int[] temp)
+    public static void merge(int[] arr, int left, int mid, int right, int[] temp)
     {
         for(int n = left; n < mid; n++)
         {
@@ -25,5 +19,23 @@ public class MergeSort {
             left++;
         }
 
+    }
+
+    public static void mergeSort(int[] arr)
+    {
+        int n = arr.length;
+        int[] temp = new int [n];
+        mergeSortHelper(arr, 0,n-1, temp);
+    }
+
+    public static int[] randomIntArr(int count)
+    {
+        int[]arr = new int[count + 1];
+        for (int i = 0; i < count; i++)
+        {
+            arr[i] = (int)(Math.random() * (count) + 1);
+        }
+
+        return arr;
     }
 }
